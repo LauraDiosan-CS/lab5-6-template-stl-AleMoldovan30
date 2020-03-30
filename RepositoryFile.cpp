@@ -15,11 +15,11 @@ RepositoryFile::RepositoryFile(const char* fileName)
 	ifstream f(fileName);
 	string linie;
 	char* nume = new char[10];
-	int varsta;
+	int varsta, buc;
 	while (!f.eof()) {
-		f >> nume >> varsta;
+		f >> nume >> varsta >> buc;
 		if (nume != "") {
-			Student s(nume, varsta);
+			Student s(nume, varsta, buc);
 			elem.push_back(s);
 		}
 	}
@@ -33,11 +33,11 @@ void RepositoryFile::loadFromFile(const char * fileName)
 	fis = fileName;
 	ifstream f(fileName);
 	char* nume = new char[10];
-	int varsta;
+	int varsta, buc;
 	while (!f.eof()) {
-		f >> nume >> varsta;
+		f >> nume >> varsta >> buc;
 		if (strcmp(nume, "") != 0) {
-			Student s(nume, varsta);
+			Student s(nume, varsta, buc);
 			elem.push_back(s);
 		}
 	}
@@ -87,7 +87,7 @@ int RepositoryFile::delElem(Student s)
 
 Student RepositoryFile::elemAtPos(int i)
 {
-	if (i < 0 or i >= elem.size()) return Student("", -1);
+	if (i < 0 or i >= elem.size()) return Student("", -1, -1);
 	return elem[i];
 }
 

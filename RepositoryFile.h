@@ -1,5 +1,5 @@
 #pragma once
-#include "Student.h"
+#include "Magazin.h"
 #include <vector>
 using namespace std;
 

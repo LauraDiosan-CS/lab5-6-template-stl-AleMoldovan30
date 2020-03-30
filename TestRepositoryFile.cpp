@@ -18,7 +18,7 @@ void TestRepositoryFile::testLoadFromFile()
 void TestRepositoryFile::testAddElem()
 {
 	repo.loadFromFile("TestStud.txt");
-	repo.addElem(Student("Ion", 19));
+	repo.addElem(Student("Paine", 19, 5));
 	assert(repo.size() == 5);
 	repo.saveToFile();
 }
@@ -26,15 +26,15 @@ void TestRepositoryFile::testAddElem()
 void TestRepositoryFile::testFindElem()
 {
 	repo.loadFromFile("TestStud.txt");
-	assert(repo.findElem(Student("Maria", 19)) == 1);
-	assert(repo.findElem(Student("Maya", 19)) == -1);
+	assert(repo.findElem(Student("Cutit", 19, 5)) == 1);
+	assert(repo.findElem(Student("Lingura", 19, 5)) == -1);
 	repo.saveToFile();
 }
 
 void TestRepositoryFile::testDelElem()
 {
 	repo.loadFromFile("TestStud.txt");
-	repo.delElem(Student("Ion", 19));
+	repo.delElem(Student("Paine", 19, 5));
 	assert(repo.size() == 4);
 	repo.saveToFile();
 }
@@ -50,15 +50,15 @@ void TestRepositoryFile::testGetAll()
 void TestRepositoryFile::testUpdateElem()
 {
 	repo.loadFromFile("TestStud.txt");
-	repo.updateElem(Student("Maria", 19), "Mary", 20);
-	assert(repo.findElem(Student("Mary", 20)) == 1);
+	repo.updateElem(Student("Cutit", 19, 20), "Lingura", 20);
+	assert(repo.findElem(Student("Lingura", 20, 5)) == 1);
 	repo.saveToFile();
 }
 
 void TestRepositoryFile::testElemAtPos()
 {
 	repo.loadFromFile("TestStud.txt");
-	assert(repo.elemAtPos(1) == Student("Maria", 19));
+	assert(repo.elemAtPos(1) == Student("Maria", 19, 20));
 	repo.saveToFile();
 }
 
@@ -72,7 +72,7 @@ void TestRepositoryFile::testSaveToFile()
 {
 	repo.loadFromFile("TestStud.txt");
 	int n = repo.size();
-	repo.addElem(Student("Ion", 19));
+	repo.addElem(Student("Paine", 19, 5));
 	repo.saveToFile();
 	repo.loadFromFile("TestStud.txt");
 	assert(repo.getAll().size() == (n + 1));

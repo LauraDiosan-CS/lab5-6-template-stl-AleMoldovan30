@@ -1,6 +1,6 @@
 #include "TestRepositoryFile.h"
-#include "TestService.h"
-#include "UI.h"
+
+
 
 #include <iostream>
 
@@ -17,12 +17,12 @@ int main() {
 	/******TEST REPO FILE****/
 	TestRepositoryFile test;
 	test.testAddElem();
-	test.testDelElem();
-	test.testElemAtPos();
-	test.testFindElem();
+	//test.testDelElem();
+	//test.testElemAtPos();
+	//test.testFindElem();
 	test.testGetAll();
 	test.testSize();
-	test.testUpdateElem();
+	//test.testUpdateElem();
 	
 	/******** TEST SERVICE ******/
 /*	TestService ts;
