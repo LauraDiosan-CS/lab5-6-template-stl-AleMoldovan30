@@ -1,27 +1,20 @@
-/*#pragma once
-#include "RepositoryFile.h"
-#include "Magazin.h"
-#include <vector>
+#pragma once
+#include "RepoFile.h"
+#include <set>
 using namespace std;
+class Service {
 
-class Service
-{
-private:
-	RepositoryFile repo;
-public:
-	Service();
-	Service(const RepositoryFile&);
-	void setRepo(const RepositoryFile&);
-	vector<Student> filterStudents(char* name, int age);
-	void addStudent(Student&);
-	int delStudent(Student&);
-	vector<Student> getAll();
-	Student update(Student, char*, int);
-	bool findOne(Student);
-	vector<Student> sortByName();
-	vector<Student> sortByAge();
-	vector<Student> filterByNameAndAge(const char* n, int a);
-	~Service();
+	private:
+
+		Repo<Carte> repo;
+
+	public:
+		Service() {}
+		~Service() {}
+		void insert_service(char*, double, int);
+		//int get_len();
+		//void updateS(Carte& s, char* nume, double pret, int buc);
+		//void updateS(char* nume, double pret, int buc, char* nume1, double pret1, int buc1);
+	    //void delS(char* nume, double pret, int buc);
+		//std::set<Carte> get_all();
 };
-
-*/
